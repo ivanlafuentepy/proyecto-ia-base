@@ -1,0 +1,5 @@
+# Forzar saltos de línea LF en scripts de shell para que corran en Mac/Linux
+*.sh text eol=lf
+
+# Normalizar texto, dejar que git maneje el resto
+* text=auto

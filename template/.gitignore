@@ -1,0 +1,19 @@
+# Secretos — NUNCA a git
+CLAUDE.local.md
+.env
+.env.local
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
