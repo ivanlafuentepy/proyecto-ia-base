@@ -1,3 +1,4 @@
-﻿# RESUMEN del proyecto
+# Estado del proyecto
 
-> Pendiente Fase 3 — estado vivo del proyecto.
+Todavía no hay nada registrado.
+Cuando termines una sesión de trabajo, escribí `/cierre` y esto se completa solo.

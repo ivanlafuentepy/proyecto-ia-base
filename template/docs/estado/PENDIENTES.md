@@ -1,3 +1,3 @@
-﻿# PENDIENTES
+# Pendientes
 
-> Pendiente Fase 3 — tareas abiertas.
+- [ ] Configurar el proyecto con `/configurar`

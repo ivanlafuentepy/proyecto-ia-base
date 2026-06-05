@@ -1,3 +1,4 @@
-﻿# PROGRESO
+# Bitácora de sesiones
 
-> Pendiente Fase 3 — bitacora de sesiones.
+Acá se va guardando lo que hacés en cada sesión (lo más reciente arriba).
+Se completa con `/cierre`.
