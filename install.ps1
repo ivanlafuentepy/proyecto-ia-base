@@ -2,8 +2,6 @@
 # Uso:
 #   irm https://raw.githubusercontent.com/ivanlafuentepy/proyecto-ia-base/main/install.ps1 | iex
 
-$ErrorActionPreference = "Stop"
-
 Write-Host ""
 Write-Host "=== Proyecto IA Base - Instalador ===" -ForegroundColor Cyan
 Write-Host ""
@@ -24,7 +22,11 @@ $repo = "https://github.com/ivanlafuentepy/proyecto-ia-base.git"
 $tmp  = Join-Path $env:TEMP ("proyecto-ia-base-" + [System.Guid]::NewGuid().ToString())
 
 Write-Host "Descargando plantilla..." -ForegroundColor Yellow
-git clone --depth 1 $repo $tmp 2>$null
+git clone --depth 1 --quiet $repo $tmp
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "No se pudo descargar la plantilla. Revisa tu conexion a internet." -ForegroundColor Red
+    return
+}
 
 Write-Host "Copiando archivos a esta carpeta..." -ForegroundColor Yellow
 Get-ChildItem -Path (Join-Path $tmp "template") -Force | Copy-Item -Destination "." -Recurse -Force
@@ -32,9 +34,9 @@ Get-ChildItem -Path (Join-Path $tmp "template") -Force | Copy-Item -Destination 
 Remove-Item -Recurse -Force $tmp
 
 Write-Host "Inicializando git..." -ForegroundColor Yellow
-git init -q
+git init --quiet
 git add -A
-git commit -q -m "Proyecto IA Base inicial" | Out-Null
+git commit --quiet -m "Proyecto IA Base inicial"
 
 Write-Host ""
 Write-Host "Listo!" -ForegroundColor Green
